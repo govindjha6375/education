@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .list-group {
+            border: none;
+        }
+
+        .list-group-item {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-size: 18px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .list-group-item:hover {
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Top Recommended Studies with Probabilities</h1>
+        <ul class="list-group mt-3">
+            {% for recommendation in recommendations %}
+                <li class="list-group-item">{{ recommendation[0] }} with probability {{ recommendation[1] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
